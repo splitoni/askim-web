@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C❤️A</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffe6f0;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #e60073;
+    }
+    .question {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: #cc0066;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #yes {
+      background-color: #ff66a3;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    #yes:hover {
+      background-color: #ff3385;
+    }
+    #no {
+      background-color: #cccccc;
+      color: #666;
+      position: relative;
+    }
+    .final-message {
+      display: none;
+      margin-top: 50px;
+      font-size: 1.6em;
+      color: #99004d;
+    }
+  </style>
+</head>
+<body>
+  <h1>C❤️A</h1>
+  <div class="question">Beni affediyor musun askim?</div>
+  <div class="buttons">
+    <button id="yes">Evet 🥰</button>
+    <button id="no">Hayır 🙃</button>
+  </div>
+  <div class="final-message" id="message">
+    Seni çookkk seviyorum her şeyimsin Cemrem 💖💖
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yes');
+    const noBtn = document.getElementById('no');
+    const msg = document.getElementById('message');
+
+    yesBtn.addEventListener('click', () => {
+      msg.style.display = 'block';
+    });
+
+    noBtn.addEventListener('mouseover', () => {
+      // kaçan buton efekti
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+
+      // evet butonu büyüsün
+      const currentFontSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
+      yesBtn.style.fontSize = (currentFontSize * 1.2) + 'px';
+    });
+  </script>
+</body>
+</html>
